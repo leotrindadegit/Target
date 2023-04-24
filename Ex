@@ -1,0 +1,43 @@
+package teste;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+
+		// Exercicio 2
+		int primeiro = 0;
+		int segundo = 1;
+		int terceiro = 0;
+		
+		Scanner valorDigitado = new Scanner(System.in);
+		System.out.println("Digite um numero e verifique se faz parte da sequência de Fibonacci: ");
+		int valor = valorDigitado.nextInt();
+		
+		while(valor > terceiro) {
+			terceiro = primeiro + segundo;
+			primeiro = segundo;
+			segundo = terceiro;
+		}
+		
+		if(valor == 0) {
+			System.out.println("O numero 0 faz parte da sequência de Fibonacci");
+		}else if(valor == terceiro) {
+			System.out.println("O numero faz parte da sequência de Fibonacci");
+		}else {
+			System.out.println("O numero não faz parte da sequência de Fibonacci");
+		}
+		
+
+		// Exercicio 5
+		
+		Scanner palavraDigitada = new Scanner(System.in);
+		System.out.println("Digite uma palavra ou frase para ver seu inverso: ");
+		String palavra = palavraDigitada.next();
+		String inversa = "";
+		for(int i = palavra.length() - 1; i>=0; i--) {
+			inversa = inversa + Character.toString(palavra.charAt(i));
+		}
+		System.out.println(inversa);
+	}
+}
